@@ -1,0 +1,14 @@
+[core]
+	editor = emacs
+
+[color]
+	ui = auto
+
+[branch]
+	autosetuprebase = always
+
+[merge]
+	stat = true
+
+[rebase]
+	stat = true
