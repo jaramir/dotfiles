@@ -59,7 +59,7 @@ export PS1="${CYAN}\$(date +%H:%M) ${RED}\$(parse_git_branch)${YELLOW}\w ${NONE}
 SET_TITLE='\e]0;'
 END_TITLE='\007'
 PROMPT_COMMAND='echo -ne "${SET_TITLE}${PWD/$HOME/~}${END_TITLE}"'
-trap 'echo -ne "${SET_TITLE}${BASH_COMMAND}${END_TITLE}"' DEBUG
+trap '[ "${BASH_COMMAND:0:2}" != "_z" ] && echo -ne "${SET_TITLE}${BASH_COMMAND}${END_TITLE}"' DEBUG
 
 if which keychain >/dev/null; then
     keychain --quiet
@@ -68,8 +68,9 @@ fi
 
 alias ".."="cd .."
 
+. $(homesick show_path)/z/z.sh
+
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-. $(homesick show_path)/z/z.sh
