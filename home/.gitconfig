@@ -3,6 +3,7 @@
 
 [color]
 	ui = auto
+	interactive = auto
 
 [branch]
 	autosetuprebase = always
@@ -12,3 +13,10 @@
 
 [rebase]
 	stat = true
+
+[push]
+	default = simple
+
+[pager]
+	status      = true
+	show-branch = true
