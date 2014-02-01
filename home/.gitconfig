@@ -15,8 +15,11 @@
 	stat = true
 
 [push]
-	default = simple
+	default = upstream
 
 [pager]
 	status      = true
 	show-branch = true
+[user]
+	name = Francesco Gigli
+	email = jaramir@gmail.com

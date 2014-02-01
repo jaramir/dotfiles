@@ -46,6 +46,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# virtualenvwrapper
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+    export VIRTUAL_ENV_DISABLE_PROMPT="yes"
+fi
+
 # command prompt and terminal title
 function parse_git_dirty {
   [[ ! -z "$(git status --porcelain 2>/dev/null)" ]] && echo "*"

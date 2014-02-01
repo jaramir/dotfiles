@@ -1,0 +1,9 @@
+#!/bin/bash
+# This hook is run after every virtualenv is activated.
+
+NONE="\[\033[0m\]"
+BLUE="\[\033[34m\]"
+
+export _OLD_PS1="$PS1"
+export VIRTUAL_ENV_NAME=$(basename $VIRTUAL_ENV)
+export PS1="${BLUE}(${VIRTUAL_ENV_NAME})${NONE} $PS1"
